@@ -61,11 +61,12 @@ router.get('/:blogId', (req, res) => {
         include: [
             {
                 model: models.Comment,
-                as: 'comments'
+                as: 'Comments'
             }
         ]
     }).then(blog => {
-        res.render('add-comment', blog.dataValues)
+        console.log(blog)
+        res.render('add-comment', {Comments: blog.dataValues})
 
     })
 

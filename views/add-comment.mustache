@@ -1,0 +1,38 @@
+<html>
+
+<head></head>
+
+<body>
+
+<h1>Add Comment</h1>
+
+<form method='POST' action='/blog/add-comment'>
+<input type='text' placeHolder='title' name='title'>
+<textarea name='body' placeHolder='Body of post'></textarea>
+<input type='hidden' name='blogId' value={{blogId}}>
+<button>Create</button>
+</form>
+
+<h2>Comments</h2>
+
+<ul>
+{{#comments}}
+    <li>
+    <h3>{{title}}</h3>
+    <p>{{body}}</p>
+    <p>{{createdAt}}</p>
+    </li>
+{{/comments}}
+
+</ul>
+
+
+
+<a href='http://localhost:3000/blog'>Return home</a>
+
+</body>
+
+
+
+
+</html>

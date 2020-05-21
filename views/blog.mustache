@@ -1,0 +1,39 @@
+<html>
+
+<head></head>
+
+<body>
+
+<h1>Woodturners Blog</h1>
+
+<a href='http://localhost:3000/blog/add'>Create Post</a>
+
+
+<ul>
+{{#blogs}}
+
+<li>
+<h3>{{title}}</h3>
+<p>{{body}}</p>
+<p>-{{createdAt}}</p>
+
+<form action='/blog/{{id}}/add-comment'>
+<button>Add/view comments</button>
+</form>
+
+<form method='POST' action='/blog/delete-post/{{id}}'>
+<button>Delete Post</button>
+</form>
+
+</li>
+
+
+{{/blogs}}
+</ul>
+
+</body>
+
+
+
+
+</html>
